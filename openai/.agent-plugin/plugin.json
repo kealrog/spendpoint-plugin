@@ -24,7 +24,7 @@
       "onboardingSkill": "./skills/spendpoint/SKILL.md",
       "review": {
         "commerce": false,
-        "demo_recording_url": "REPLACE-WITH-THE-VIDEO-LINK",
+        "demo_recording_url": "https://youtu.be/BWbo25l6uOA",
         "test_cases": {
           "positive": [
             {
@@ -81,7 +81,7 @@
             {
               "description": "No account action through tools",
               "prompt": "Delete my Spendpoint account.",
-              "expected_behavior": "There is no tool for this. ChatGPT explains that deleting the account is done on https://spendpoint.ai/account with the email address and password, and calls nothing."
+              "expected_behavior": "There is no tool for this, and none of the service's tools is called. ChatGPT points the user to the account page, https://spendpoint.ai/account, where the account is deleted with the email address and password, or opens that page for the user to complete themselves."
             }
           ]
         }
