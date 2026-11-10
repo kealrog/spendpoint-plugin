@@ -6,7 +6,7 @@ This repository is the plugin package for Cursor and Grok Bot: the manifest, the
 
 ## Install
 
-From the marketplace, add the Spendpoint plugin. The first time the assistant calls a tool, the service's consent page opens: sign in, or press "New here?" to create an account with your email address, open the mailed link to verify it, come back and press Allow. The address is used to verify the account and reset the password; the service stores a keyed hash of it, never the address.
+From the marketplace, add the Spendpoint plugin. The first time the assistant calls a tool, the service's consent page opens: sign in, or press "New here?" to create an account with your email address, open the mailed link and enter the password you chose to verify it, come back and press Allow. The address is used to verify the account and reset the password; the service stores a keyed hash of it, never the address.
 
 Without the marketplace, add the server by its URL in your MCP settings:
 
@@ -24,7 +24,7 @@ The server speaks MCP over Streamable HTTP under OAuth 2.1 with PKCE; the client
 
 ## Try it
 
-- "Here is my receipt. Log it in Spendpoint." with a photo of a receipt.
+- "Here is my receipt. Log it in Spendpoint." with a photo of a receipt, or with the sample in `samples/`.
 - "How much did I spend on groceries this month, and where?"
 - "Show me the last receipt in full."
 - "Export my ledger as CSV."
@@ -39,9 +39,10 @@ What the service does with your data is in the [privacy policy](https://spendpoi
 | `mcp.json` | The hosted server, `https://spendpoint.ai/mcp`, over Streamable HTTP. |
 | `skills/spendpoint/SKILL.md` | How to record a receipt, correct an entry, answer questions and handle budgets. |
 | `icon.png` | The icon, 512 pixels square. |
+| `samples/` | Two sample receipts for trying the plugin, as images with the HTML they are rendered from: a grocery receipt, and one whose total is smudged, which the assistant should ask about rather than guess. Example Market and Example Coffee Bar are invented; neither is a real shop. |
 
-This package is under the MIT licence. Use of the service is under its [terms](https://spendpoint.ai/terms). Support: support@spendpoint.ai.
+This package is under the MIT licence. Use of the service is under its [terms](https://spendpoint.ai/terms). Spendpoint is built and run by Hendrik de Beer. Support: support@spendpoint.ai.
 
 ## The ChatGPT package
 
-`openai/` is the same package in the form OpenAI's plugin directory takes: its manifest in `.agent-plugin/plugin.json`, `.mcp.json` with the server and its OAuth block, and the skill and icon shared with the rest of this repository by link. It is zipped for upload with `cd openai && zip -r ../spendpoint-plugin.zip .agent-plugin .mcp.json icon.png skills`.
+`openai/` is the same package in the form OpenAI's plugin directory takes: its manifest in `.agent-plugin/plugin.json`, `.mcp.json` with the server and its OAuth block, and the skill and icon shared with the rest of this repository by link. Its test cases run from an empty ledger and attach the sample receipts by their addresses in this repository, so the samples must be pushed before a package that names them is uploaded. It is zipped for upload with `cd openai && zip -r ../spendpoint-plugin.zip .agent-plugin .mcp.json icon.png skills`; a change to anything in it is a new version.

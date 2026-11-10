@@ -1,0 +1,24 @@
+<!doctype html><html data-height='450'><head><meta charset='utf-8'><title>Sample receipt: the total is smudged</title><style>
+body{margin:0;background:#888;display:flex;justify-content:center;padding:24px 0;font-family:'Courier New',Courier,monospace}
+.r{width:360px;background:#fcfcf7;color:#111;padding:28px 22px;font-size:14px;line-height:1.35;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.c{text-align:center}.b{font-weight:700}.big{font-size:18px}.sm{font-size:12px;color:#333}
+hr{border:0;border-top:1px dashed #555;margin:10px 0}
+table{width:100%;border-collapse:collapse}td{padding:2px 0;vertical-align:top}td.a{text-align:right;white-space:nowrap}
+.smudge{position:relative;display:inline-block}.smudge:after{content:'';position:absolute;left:-8px;right:-8px;top:-4px;bottom:-4px;background:#1a1a1a;border-radius:3px;box-shadow:0 0 3px 2px #1a1a1a}
+</style></head><body><div class='r'>
+<div class='c b big'>EXAMPLE COFFEE BAR</div>
+<div class='c sm'>3 Sample Square, Amsterdam<br>VAT no. NL000000000B02</div>
+<hr>
+<div class='sm'>Receipt no. 88102<br>2026-11-08 &nbsp; 08:15</div>
+<hr>
+<table>
+<tr><td>Large coffee</td><td class='a'>3.20</td></tr>
+<tr><td>Cinnamon bun</td><td class='a'>2.80</td></tr>
+</table>
+<hr>
+<table><tr><td class='b big'>TOTAL EUR</td><td class='a b big'><span class='smudge'>6.00</span></td></tr>
+<tr><td>Card</td><td class='a'><span class='smudge'>6.00</span></td></tr></table>
+<hr>
+<table class='sm'><tr><td>VAT 9%</td><td class='a'>Net 5.50</td><td class='a'>VAT 0.50</td></tr></table>
+<hr><div class='c sm'>Sample receipt for testing Spendpoint.<br>Example Coffee Bar is not a real shop.</div>
+</div></body></html>
